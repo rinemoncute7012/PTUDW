@@ -1,16 +1,14 @@
 ﻿@model IEnumerable<MyClass.Model.Categories>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tất cả loại sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-
     <!-- Main content -->
     <section class="content my-2">
-
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
@@ -22,12 +20,11 @@
                         <a href="@Url.Action("Create","Categories")" class="btn-sm btn-success"> <i class="fa fa-plus"></i>Thêm</a>
                         <a href="@Url.Action("Trash","Categories")" class="btn-sm btn-danger"> <i class="fa fa-trash"></i>Thùng rác</a>
                     </div>
-
                 </div>
             </div>
             <div class="card-body">
                 @*Hien thi noi dung thong bao ngay ben tren bang du lieu*@
-                @*@Html.Partial("Message")*@
+                @Html.Partial("Message")
                 <table class="table table-bordered table-striped" id="myTable">
                     <thead>
                         <tr>
@@ -40,7 +37,6 @@
                             <th>Chức năng</th>
                         </tr>
                     </thead>
-
                     <tbody>
                         @foreach (var item in Model)
                         {
@@ -67,13 +63,11 @@
                             </tr>
                         }
                     </tbody>
-
                 </table>
                 <!-- /.card-body -->
             </div>
         </div>
         <!-- /.card -->
-
     </section>
     <!-- /.content -->
 </div>

@@ -1,7 +1,7 @@
 ﻿@model MyClass.Model.Categories
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Thêm mới loại sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -9,13 +9,10 @@
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-
         <!-- Main content -->
         <section class="content my-2">
-
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
@@ -28,9 +25,8 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="card-body">
-                    @*Phan NOI DUNG*@
+                    @* Phần nội dung *@
                     <div class="row">
                         @* Phần nhập tay *@
                         <div class="col-md-9">
@@ -41,7 +37,6 @@
                                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label>Mô tả chi tiết <span class="text-danger"> (*)</span></label>
                                 <div class="col-md-10">
@@ -49,36 +44,30 @@
                                     @Html.ValidationMessageFor(model => model.MetaDesc, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label>Từ khóa <span class="text-danger"> (*)</span></label>
                                 <div class="col-md-10">
-                                    @Html.TextAreaFor(model => model.MetaKey, new { @class = "form-control", @rows = "3" })
+                                    @Html.TextAreaFor(model => model.MetaKey, new { @class = "form-control", @rows = "3"})
                                     @Html.ValidationMessageFor(model => model.MetaKey, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                         </div>
-
                         @* Phần lựa chọn *@
                         <div class="col-md-3">
-
                             <div class="form-group">
-                                <label>Cấp cha <span class="text-danger"></span></label>
-                                <div class="col-md-10">
-                                    @Html.DropDownListFor(model => model.ParentId, (SelectList)@ViewBag.ListCat, "Cấp 0", new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.ParentId, "", new { @class = "text-danger" })
+                                    <label>Cấp cha <span class="text-danger"></span></label>
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(model => model.ParentId, (SelectList)@ViewBag.ListCat, "Cấp 0", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.ParentId, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Sắp xếp <span class="text-danger"></span></label>
-                                <div class="col-md-10">
-                                    @Html.DropDownListFor(model => model.Order, (SelectList)@ViewBag.OrderList, "Sắp xếp", new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.Order, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    <label>Sắp xếp <span class="text-danger"></span></label>
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(model => model.Order, (SelectList)@ViewBag.OrderList, "Sắp xếp", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Order, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                            </div>
-
                             <div class="form-group">
                                 <label>Trạng thái <span class="text-danger"> (*)</span></label>
                                 <div class="col-md-10">
@@ -86,7 +75,6 @@
                                     @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="form-group">

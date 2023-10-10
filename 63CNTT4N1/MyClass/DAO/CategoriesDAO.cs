@@ -8,18 +8,17 @@ using MyClass.Model;
 
 namespace MyClass.DAO
 {
-    
+
     public class CategoriesDAO
     {
         private MyDBContext db = new MyDBContext();
 
-        //INDEX
+        //Index
         public List<Categories> getList()
         {
             return db.Categories.ToList();
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////
         //Hien thi danh sach theo trang thai
         public List<Categories> getList(string status = "All")
         {
@@ -49,7 +48,6 @@ namespace MyClass.DAO
             return list;
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////
         //Hien thi danh sach 1 mau tin (ban ghi)
         public Categories getRow(int? id)
         {
@@ -63,21 +61,25 @@ namespace MyClass.DAO
             }
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////
-        ///Them moi mot mau tin
+        //Them moi mot mau tin
         public int Insert(Categories row)
         {
             db.Categories.Add(row);
             return db.SaveChanges();
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////
-        ///Cap nhat mot mau tin
+        //Cap nhat mot mau tin
         public int Update(Categories row)
         {
             db.Entry(row).State = EntityState.Modified;
             return db.SaveChanges();
         }
 
+        //Xoa mot mau tin Xoa ra khoi CSDL
+        public int Delete(Categories row)
+        {
+            db.Categories.Remove(row);
+            return db.SaveChanges();
+        }
     }
 }

@@ -24,6 +24,5 @@ namespace MyClass.Model
         public DbSet<Suppliers> Suppliers { get; set; }
         public DbSet<Topics> Topics { get; set; }
         public DbSet<Users> Users { get; set; }
-
     }
 }

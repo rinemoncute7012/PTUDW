@@ -40,6 +40,5 @@ namespace MyClass.Model
 
         [Required]
         public int Status { get; set; }
-
     }
 }
